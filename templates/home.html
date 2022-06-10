@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<form action="/home/" method="post">
+    {% csrf_token %}
+
+    <select name="category" id="category">
+        <option value="0" selected>노트북</option>
+        <option value="01">핸드폰</option>
+    </select>
+    <input type="submit">
+</form>
+{% for product in current_products %}
+    <ul>{{ product.name }}</ul>
+{% endfor %}
+</body>
+</html>
